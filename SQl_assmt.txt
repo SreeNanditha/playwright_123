@@ -1,0 +1,39 @@
+1. Retrieve all data from the FG_USER table
+select * from fg_user;
+
+2. Provide a SQL query to fetch only USER_ID from the table FG_USER where their USER_TYPE_CODE is 'FG_BANKUSER'
+SELECT USER_ID from fg_user where user_type_code = 'FG_BANKUSER';
+
+3. How many unique names are there in user IDs in the FG_USER table? - use count
+SELECT count (user_id) from fg_user;
+
+⁠4. What is the average party ID in the FG_USER table - use AVG
+SELECT AVG (party_id) from fg_user;
+
+5. Display all the data from the FG_USER table, arranging it in ascending order according to the party ID
+SELECT party_id from fg_user ORDER BY party_id ASC;
+
+⁠6. Retrieve all the data from the FG_USER table where the last logout time is NULL - use ISNULL
+SELECT party_id, user_id  FROM fg_user WHERE last_logout_time IS NULL;
+
+7. Provide a SQL query to retrieve all user Id from the FG_USER table where the user IDs start with 'S'
+SELECT user_id  FROM fg_user WHERE user_id LIKE 'S%';
+
+8. Provide a SQL query to retrieve with the data where the party_ID is greater than 4700
+SELECT party_id  FROM fg_user WHERE party_id > 4700 ;
+
+9. Retrieve the first 5 user IDs from the FG_USER table where the user ID starts with 'a' - use limit
+SELECT user_id FROM fg_user WHERE user_id LIKE 'A%' AND rownum <=5;
+
+10. Provide a list of user IDs and their corresponding names from the FG_USER and FG_PARTY tables, respectively, where the party IDs in FG_USER match the IDs in FG_PARTY
+SELECT user_id,name FROM FG_USER JOIN FG_PARTY ON FG_USER.party_id = FG_PARTY.id;
+
+
+
+
+
+
+
+
+
+
